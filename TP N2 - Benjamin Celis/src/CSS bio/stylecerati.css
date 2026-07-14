@@ -1,0 +1,314 @@
+
+
+.cerati-page {
+    width: 100%;
+    background-color: #0b0b0b;
+    min-height: 100vh;
+}
+
+/* Link para volver al inicio */
+.back-link {
+    display: inline-block;
+    margin: 140px 0 0 5%;
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #b3b3b3;
+    transition: color 0.3s ease;
+}
+
+.back-link:hover {
+    color: #ffffff;
+}
+
+
+.cerati-title-section {
+    width: 100%;
+    padding: 60px 0 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+}
+
+.cerati-title {
+    font-size: 64px;
+    font-weight: 700;
+    letter-spacing: 10px;
+    text-transform: uppercase;
+    text-align: center;
+    background: linear-gradient(90deg, #e60012 0%, #ff7a45 45%, #ffe9d6 75%, #ffffff 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    filter: drop-shadow(0 0 25px rgba(230, 0, 18, 0.35));
+}
+
+
+.cerati-hero {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 20px 100px;
+    text-align: center;
+}
+
+.cerati-click-image-wrapper {
+    width: 360px;
+    max-width: 85%;
+    aspect-ratio: 3 / 4;
+    overflow: hidden;
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.7);
+    cursor: pointer;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.cerati-click-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: opacity 0.25s ease, transform 0.4s ease;
+}
+
+.cerati-click-image-wrapper:hover .cerati-click-image {
+    transform: scale(1.03);
+}
+
+.click-hint {
+    display: block;
+    margin-top: 16px;
+    margin-bottom: 60px;
+    font-size: 10px;
+    font-weight: 400;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #666666;
+}
+
+.cerati-bio-text {
+    max-width: 700px;
+}
+
+.cerati-bio-text p {
+    font-size: 13px;
+    font-weight: 300;
+    line-height: 2;
+    letter-spacing: 1px;
+    color: #b3b3b3;
+}
+
+
+.cerati-photos-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.hover-reveal-block {
+    position: relative;
+    width: 100%;
+    height: 75vh;
+    background-color: #0b0b0b;
+    border-top: 1px solid #1a1a1a;
+    overflow: hidden;
+}
+
+.hover-reveal-block:last-child {
+    border-bottom: 1px solid #1a1a1a;
+}
+
+/* Franjas invisibles en los bordes que detectan el cursor */
+.hover-trigger {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 18%;
+    z-index: 5;
+}
+
+.hover-trigger.hover-left { left: 0; }
+.hover-trigger.hover-right { right: 0; }
+
+/* Fila con la imagen grande a un lado y el texto al otro */
+.hover-photo-row {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.9s ease, transform 0.9s ease;
+    pointer-events: none;
+}
+
+.hover-photo-row.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.hover-photo-row.reverse {
+    flex-direction: row-reverse;
+}
+
+.hover-photo-media {
+    width: 60%;
+    height: 100%;
+}
+
+.hover-photo-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.hover-photo-text {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0 8%;
+}
+
+.hover-photo-text h2 {
+    font-size: 22px;
+    font-weight: 400;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.hover-photo-text p {
+    font-size: 13px;
+    font-weight: 300;
+    line-height: 1.8;
+    letter-spacing: 1px;
+    color: #b3b3b3;
+    text-align: left;
+}
+
+
+.cerati-quotes-section {
+    padding: 80px 5% 140px;
+}
+
+.quotes-title-wrapper {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.quotes-title {
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: #ffffff;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #e60012;
+}
+
+.quotes-table-wrapper {
+    max-width: 1100px;
+    margin: 0 auto;
+    overflow-x: auto;
+}
+
+.quotes-table {
+    width: 100%;
+    min-width: 720px;
+    border-collapse: collapse;
+    background-color: #121212;
+}
+
+.quotes-table td {
+    width: 16.66%;
+    border: 1px solid #1f1f1f;
+    padding: 30px 18px;
+    font-size: 12px;
+    font-style: italic;
+    font-weight: 300;
+    line-height: 1.7;
+    letter-spacing: 0.5px;
+    color: #b3b3b3;
+    text-align: center;
+    vertical-align: middle;
+    transition: color 0.3s ease, background-color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.quotes-table td::before { content: "“ "; color: #e60012; }
+.quotes-table td::after { content: " ”"; color: #e60012; }
+
+.quotes-table td:hover {
+    background-color: #171717;
+    color: #ffffff;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.9),
+                 0 0 18px rgba(255, 255, 255, 0.6),
+                 0 0 32px rgba(255, 255, 255, 0.35);
+}
+
+
+@media (max-width: 768px) {
+    .back-link { margin-top: 110px; }
+
+    .cerati-title {
+        font-size: 34px;
+        letter-spacing: 5px;
+    }
+
+    .cerati-click-image-wrapper {
+        width: 260px;
+    }
+
+    /* En mobile el hover no es confiable: el contenido queda siempre visible y apilado */
+    .hover-reveal-block {
+        height: auto;
+    }
+
+    .hover-trigger {
+        display: none;
+    }
+
+    .hover-photo-row,
+    .hover-photo-row.reverse {
+        position: relative;
+        inset: auto;
+        flex-direction: column;
+        opacity: 1;
+        transform: none;
+        pointer-events: auto;
+    }
+
+    .hover-photo-media,
+    .hover-photo-text {
+        width: 100%;
+    }
+
+    .hover-photo-media {
+        height: 45vh;
+    }
+
+    .hover-photo-text {
+        padding: 30px 8%;
+        align-items: center;
+        text-align: center;
+    }
+
+    .hover-photo-text p {
+        text-align: center;
+    }
+
+    .quotes-table td {
+        padding: 20px 12px;
+        font-size: 11px;
+    }
+}

@@ -1,0 +1,233 @@
+
+
+@font-face {
+    font-family: 'Slabo 27px';
+    src: url('../../fonts/Slabo_27px/Slabo27px-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+.album-page {
+    width: 100%;
+    background-color: #0b0b0b;
+    min-height: 100vh;
+}
+
+/* Link para volver a la discografía */
+.back-link {
+    display: inline-block;
+    margin: 140px 0 0 5%;
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #b3b3b3;
+    transition: color 0.3s ease;
+}
+
+.back-link:hover {
+    color: #ffffff;
+}
+
+
+.album-hero {
+    width: 100%;
+    padding: 40px 20px 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.album-title {
+    font-size: 40px;
+    font-weight: 700;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    color: #ffffff;
+    margin-bottom: 8px;
+}
+
+.album-year {
+    font-size: 14px;
+    font-weight: 300;
+    letter-spacing: 4px;
+    color: #888888;
+    margin-bottom: 45px;
+}
+
+.album-cover-wrapper {
+    width: 320px;
+    max-width: 80%;
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.7);
+}
+
+.album-cover-img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+
+.track-list-section {
+    padding: 20px 5% 140px;
+}
+
+.track-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+.track-item {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    padding: 18px 20px;
+    background-color: #121212;
+    border: 1px solid #1f1f1f;
+    transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+}
+
+.track-item:hover {
+    background-color: #171717;
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateX(4px);
+}
+
+.track-image {
+    flex: 0 0 64px;
+    width: 64px;
+    height: 64px;
+    overflow: hidden;
+}
+
+.track-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.track-info {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.track-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Gruppo', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #ffffff;
+    background: none;
+    border: none;
+    padding: 0;
+    text-align: left;
+    cursor: pointer;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.track-title:hover {
+    color: #ffffff;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.9),
+                 0 0 18px rgba(255, 255, 255, 0.6),
+                 0 0 30px rgba(255, 255, 255, 0.35);
+}
+
+.play-icon {
+    flex: 0 0 16px;
+    width: 16px;
+    height: 16px;
+    display: inline-flex;
+    color: #888888;
+    transition: color 0.3s ease;
+}
+
+.play-icon svg {
+    width: 16px;
+    height: 16px;
+    fill: currentColor;
+}
+
+.play-icon .icon-pause { display: none; }
+
+/* Estado: canción sonando */
+.track-item.is-playing {
+    background-color: #171717;
+    border-color: #e60012;
+}
+
+.track-item.is-playing .play-icon {
+    color: #e60012;
+}
+
+.track-item.is-playing .play-icon .icon-play { display: none; }
+.track-item.is-playing .play-icon .icon-pause { display: inline-flex; }
+
+.track-item.is-playing .track-title {
+    color: #ffffff;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.9),
+                 0 0 18px rgba(255, 255, 255, 0.6),
+                 0 0 30px rgba(255, 255, 255, 0.35);
+}
+
+.track-phrase {
+    font-family: 'Slabo 27px', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    line-height: 1.6;
+    color: #b3b3b3;
+}
+
+/* Pequeño desfasaje escalonado en la revelación de cada canción */
+.track-item:nth-child(1) { transition-delay: 0s; }
+.track-item:nth-child(2) { transition-delay: 0.05s; }
+.track-item:nth-child(3) { transition-delay: 0.1s; }
+.track-item:nth-child(4) { transition-delay: 0.15s; }
+.track-item:nth-child(5) { transition-delay: 0.2s; }
+.track-item:nth-child(6) { transition-delay: 0.25s; }
+
+@media (max-width: 768px) {
+    .back-link {
+        margin-top: 110px;
+    }
+
+    .album-title {
+        font-size: 28px;
+        letter-spacing: 4px;
+    }
+
+    .album-cover-wrapper {
+        width: 240px;
+    }
+
+    .track-item {
+        gap: 15px;
+        padding: 14px;
+    }
+
+    .track-image {
+        flex: 0 0 50px;
+        width: 50px;
+        height: 50px;
+    }
+
+    .track-title {
+        font-size: 11px;
+    }
+
+    .track-phrase {
+        font-size: 11px;
+    }
+}
